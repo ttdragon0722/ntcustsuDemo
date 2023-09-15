@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="ad-panel" class="fixed bottom-0 left-0 z-50 w-full h-[35vh] p-3">
+        <!-- panel -->
+        <div class="bg-[--ad-bg] rounded-t-xl w-full h-full pt-8 px-3 text-center relative">
+            <button class="absolute right-3 top-0" onclick="adPanel.check()">
+                X
+            </button>
+            <p>hahah</p>
+        </div>
+
+        <script>
+            class AdPanel {
+                adPanel = $("#ad-panel");
+                check() {
+                    if (this.adPanel.is(":hidden")) {
+                        adPanel.show()
+                    } else {
+                        adPanel.hide();
+                    }
+                }
+            }
+            
+            adPanel = new AdPanel();
+            adPanel.check();
+
+        </script>
+    </section>
+</body>
+</html>

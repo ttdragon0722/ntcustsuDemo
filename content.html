@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css">
+</head>
+<body>
+    <div class="app">
+        <!-- count down -->
+        <section class="count-down
+            w-full 
+            p-3
+        ">
+            <!-- panel -->
+            <div class="w-full h-full bg-white border-2 rounded-lg px-5 pt-2 pb-5 relative  ">
+                <h1 class="font-black my-2 text-2xl tracking-tighter">
+                    13 分 29秒後開搶！
+                </h1>
+                <p class="text-xs">每天11:00和17:00開搶限量美食優惠劵</p>
+                <img src="source/img/搶.png" class="absolute right-0 top-1/2 w-[23%]" style="transform: translateY(-50%);" alt="">
+            </div>
+        </section>
+        <br>
+        <!-- map -->
+        <section style="background-color: var(--map-panel-bg);" class="map
+            w-full
+            p-1
+        ">
+            <!-- panel -->
+            <div class="rounded-lg">
+                <img class="w-full" src="source/img/map.png" alt="">
+                <div class="px-5 py-4 bg-white relative">
+                    <p class="font-black text-m">探索附近的美食</p>
+                    <button style="transform: translateY(-50%);" class="px-3 py-2 rounded-lg font-bold absolute right-1 top-1/2 text-sm bg-[--button-bg1] text-[--button-color1]">顯示地圖</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        /* app init */
+        .app {
+            margin: 0 auto;
+            max-width: 425px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!-- 自取 - 一般自取 -->
+
+<!-- 自取 - 惜食福袋 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自取 - 一般自取</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+</head>
+<body>
+<div class="app">
+<!-- 上方模板 -->
+<section class="top-0 left-0 z-50 w-full bg-white border-t border-gray-200 bg-white">
+    <!-- 大標題group -->
+    <div class="relative">
+        <h1 class="ml-4 mt-4 text-2xl font-bold">
+            外帶自取
+        </h1>
+        <!-- 標籤 icon -->
+        <button type="submit"
+            class="text-white absolute right-10 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2">
+            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M3 10.95V6a1 1 0 011-1h4.95a1 1 0 01.707.293l7.636 7.636a1 1 0 010 1.415l-4.95 4.949a1 1 0 01-1.414 0l-7.636-7.636A1 1 0 013 10.948z"/><path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M15.636 20l5.657-5.656a1 1 0 000-1.415L13.363 5"/><circle xmlns="http://www.w3.org/2000/svg" cx="6.5" cy="8.5" r="1.5" fill="currentColor"/>
+            </svg>
+        </button>
+        <!-- 收藏 icon -->
+        <button type="submit"
+            class="text-white absolute right-0 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2">
+            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.574-1.635-4.46-2.135-6.035-.5-1.573 1.635-1.34 3.836 0 5.752C7.306 15.168 9.41 16.89 12 19c2.59-2.11 4.694-3.832 6.035-5.748 1.34-1.916 1.573-4.117 0-5.752C16.46 5.865 13.574 6.365 12 8z"/>
+            </svg>
+        </button>
+    </div>
+    <!-- 選取地址group -->
+    <div class="relative">
+        <h3 class="ml-4 mt-1 mb-2 text-sm">
+            標記您的位置
+        </h3>
+        <!-- 標籤 icon -->
+        <button type="submit"
+            class="text-white left-[110px] absolute top-[-3px] bg-inherit font-sm rounded-lg text-sm ">
+            <svg class="w-3 h-3 mb-2 text-gray-500 dark:text-gray-400 mt-2" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
+                <path xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-width="2" d="M5 10l7 7 7-7"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- 搜尋group -->
+    <div class="relative">
+        <!-- 搜尋icon -->
+        <div class="absolute inset-y-0 left-3 flex items-center pl-4 pointer-events-none">
+            <svg class="w-3 h-3 text-slate-600 dark:text-gray-400" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+        </div>
+        <!-- input -->
+        <input type="search"
+            class="block w-[80%] px-4 py-1 ml-4 pl-8 mr-6 text-sm text-gray-900 rounded-full bg-gray-50"
+            placeholder="搜尋附近的餐廳">
+        <!-- 篩選 icon -->
+        <button type="submit"
+            class="text-white absolute right-0 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2">
+            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
+                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2"
+                    d="M12 4v10m0 6v-.5M17.5 4v5m0 11v-5.56M6.5 4v2m0 14v-8.44M6.5 6a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5.5 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5.5-5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+            </svg>
+        </button>
+    </div>
+</section>
+<!-- 子功能選取列 x3 link -->
+<section class="flex pt-4 bg-white z-50" style="position: sticky;top:0;">
+    <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
+
+    </div>
+    <button class="w-1/3 flex justify-center text-xs font-bold" onclick="window.location.href = '/selfPickUp.html'">
+        <span
+            class="text-[--btm-icon-hover] px-2 pb-1 border border-solid border-0 border-b-2 border-[--btm-icon-hover]">
+            一般自取
+        </span>
+    </button>
+    <button class="w-1/3 flex justify-center text-xs font-bold" onclick="window.location.href = '/cherish.html'">
+        <span>
+
+            惜食福袋
+        </span>
+    </button>
+    <button class="w-1/3 flex justify-center text-xs font-bold" onclick="window.location.href = '/shopSell.html'">
+        <span>
+            店家開團
+        </span>
+    </button>
+</section>
+
+
+
+<!-- 下方四格選擇大功能 bottom navbar menu -->
+<section class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 ">
+    <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium 
+        btm-menu
+        ">
+        <!-- 
+            bottom menu 
+            
+            顏色可由config更改
+        -->
+        <style>
+            .btm-menu button:hover>span,
+            .btm-menu button:hover>svg {
+                color: var(--btm-icon-hover);
+            }
+
+            .btm-menu>button:hover {
+                background-color: var(--btm-btn-hover);
+            }
+        </style>
+        <!-- botton x4 按鈕 -->
+        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+            onclick="window.location.href = '/selfPickUp.html';">
+            <svg class="w-5 h-5 mb-2  " aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                <path xmlns="http://www.w3.org/2000/svg" class="stroke-[--btm-icon-hover]" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2m-4-8s1-1 .5-2l-1-2C12 4 13 3 13 3M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2"/>
+            </svg>
+            <span class="text-sm text-[--btm-icon-hover]">自取</span>
+        </button>
+        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+            onclick="window.location.href = '/activity.html';">
+            <svg class="w-5 h-5 mb-2  " aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                <path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M8.5 10.5l-.6-.8a1 1 0 00.153 1.694L8.5 10.5zm4 2l.99.141a1 1 0 00-.543-1.035l-.447.894zm-1.49 3.359a1 1 0 101.98.282l-1.98-.282zM12.5 7.5l.707-.707A1 1 0 0011.9 6.7l.6.8zM15 10l-.707.707A1 1 0 0015 11v-1zm2 1a1 1 0 100-2v2zm-9 5a2 2 0 01-2 2v2a4 4 0 004-4H8zm-2 2a2 2 0 01-2-2H2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm2.053-2.606l4 2 .894-1.788-4-2-.894 1.788zm3.457.965l-.5 3.5 1.98.282.5-3.5-1.98-.282zM9.1 11.3l4-3-1.2-1.6-4 3 1.2 1.6zm2.693-3.093l2.5 2.5 1.414-1.414-2.5-2.5-1.414 1.414zM15 11h2V9h-2v2zm5 5a2 2 0 01-2 2v2a4 4 0 004-4h-2zm-2 2a2 2 0 01-2-2h-2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm-3-9v2a2 2 0 002-2h-2zm0 0h-2a2 2 0 002 2V5zm0 0V3a2 2 0 00-2 2h2zm0 0h2a2 2 0 00-2-2v2z"/>
+            </svg>
+            <span class="text-sm ">活動</span>
+        </button>
+        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+            onclick="window.location.href = '/orderFood.html';">
+            <svg class="w-5 h-5 mb-2  " aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"><path stroke-linejoin="round" d="M3 5a1 1 0 011-1h16a1 1 0 011 1v3H3V5z"/><path stroke-linecap="round" d="M9.5 13h5"/><path stroke-linejoin="round" d="M4 8h16v11a1 1 0 01-1 1H5a1 1 0 01-1-1V8z"/></g>
+            </svg>
+            <span class="text-sm ">訂單</span>
+        </button>
+        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+            onclick="window.location.href = '/setting.html';">
+            <svg class="w-5 h-5 mb-2  " aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 19v-1.25c0-2.071-1.919-3.75-4.286-3.75h-3.428C7.919 14 6 15.679 6 17.75V19m9-11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="text-sm ">個人</span>
+        </button>
+    </div>
+</section>
+</div>
+</body>
+</html>

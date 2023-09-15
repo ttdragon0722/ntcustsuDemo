@@ -1,0 +1,18 @@
+:root {
+    --btm-icon-hover: #F27813;
+    --btm-btn-hover: aliceblue;
+
+    --map-panel-bg: #F7F7F7;
+
+    --button-bg1: #E11D6F;
+    --button-color1: white;
+
+    --ad-bg: #EEEEEE;
+
+}
+
+/* app init */
+.app {
+    margin: 0 auto;
+    max-width: 425px;
+}
