@@ -1,0 +1,627 @@
+<!-- 餐廳內頁介紹 -->
+<!-- 照抄Uber eat -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動 - 專屬推薦</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        const $collapseEl = document.querySelector('#navbar-collapse-basic')
+        const $scrollSpyEl = document.querySelector('[data-hs-scrollspy="#scrollspy-1"]')
+
+        $scrollSpyEl.addEventListener('scroll.hs.scrollspy', () => {
+            if (window.outerWidth <= 639 && $collapseEl.classList.contains('open')) {
+                HSCollapse.hide($collapseEl)
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 上方模板 -->
+
+        <!-- top 上一頁 -->
+        <section class="flex bg-white z-50 fixed top-0 w-full">
+            <button class="px-4 py-3 mx-1" onclick="window.history.go(-1); ">
+                <!-- <svg class="w-6 h-6 my-1" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+            <path xmlns="http://www.w3.org/2000/svg" class="stroke-gray-500" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2m-4-8s1-1 .5-2l-1-2C12 4 13 3 13 3M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2"/>
+        </svg> -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-7 my-1" viewBox="0 0 448 512">
+                    <path
+                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                </svg>
+            </button>
+            <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
+
+            </div>
+        </section>
+
+        <!-- 上方空白區域 -->
+        <section class="w-full h-12">
+
+        </section>
+
+        <!-- 餐廳圖片區域 -->
+        <section class="w-full max-h-36 overflow-hidden">
+            <img src="/source/img/rexBrunch.jpeg" class="w-full" alt="">
+        </section>
+
+        <!-- 標題 副標題 -->
+        <section class="top-0 left-0 z-50 w-full bg-white border-t border-gray-200 bg-white">
+            <!-- 大標題group -->
+            <div class="px-4 pt-4">
+                <h1 class="text-2xl font-bold">
+                    雷克斯漢堡 台中倉平店
+                </h1>
+            </div>
+            <div class="px-4 relative">
+                <div class="absolute left-4 top-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
+                        viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z" />
+                    </svg>
+                </div>
+                <div class="pl-6">
+
+                    <span class="text-sm">
+                        已關閉 • 供應時段：星期日5:30 AM <br>
+                        點選即可查看營業時間、資訊和更多內容
+                    </span>
+                </div>
+                <div class="absolute right-6 top-2">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                        viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" />
+                    </svg>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- 滑動按鈕類型 link -->
+        <section class="flex pt-4 z-50 top-14 sticky bg-white">
+            <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
+
+            </div>
+            <div class="flex overflow-auto">
+                <button class="flex justify-center text-xs font-bold">
+                    <a class="px-4 whitespace-nowrap
+                            text-[--btm-icon-hover] pb-1 border border-solid border-0 border-b-2 border-[--btm-icon-hover]"
+                        href="#first">
+                        歡慶雷克斯節！買飲料免費贈送吸管。
+                    </a>
+                </button>
+                <button class="flex justify-center text-xs font-bold">
+                    <a class="px-4 whitespace-nowrap" href="#second">
+                        克斯ㄉ專屬推薦
+                    </a>
+                </button>
+                <button class="flex justify-center text-xs font-bold">
+                    <a class="px-4 whitespace-nowrap" href="#third">
+                        雷克斯套餐
+                    </a>
+                </button>
+                <button class="flex justify-center text-xs font-bold">
+                    <a class="px-4 whitespace-nowrap" href="#fourth">
+                        精選主食
+                    </a>
+                </button>
+                <button class="flex justify-center text-xs font-bold">
+                    <a class="px-4 whitespace-nowrap" href="#fifth">
+                        克斯熬製湯品
+                    </a>
+                </button>
+                <button class="flex justify-center text-xs font-bold">
+                    <a class="px-4 whitespace-nowrap" href="#sixth">
+                        雷克點心
+                    </a>
+                </button>
+                <button class="flex justify-center text-xs font-bold">
+                    <a class="px-4 whitespace-nowrap" href="#seventh">
+                        克斯現榨飲料
+                    </a>
+                </button>
+            </div>
+
+        </section>
+
+        <!-- 標題 first -->
+        <section class="count-down w-full px-4 mt-4 pb-4">
+
+            <div class="w-full bg-white relative">
+                <div class="">
+                    <h3 id="second" class="text-2xl font-bold tracking-tighter leading-sung">
+                        歡慶雷克斯節！買飲料免費贈送吸管。
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 優惠內容 first -->
+        <section id="first" class="count-down w-full mb-4 flex px-4">
+
+            <div class="w-1/2 pr-2">
+                <div class="w-full min-h-36 max-h-48 bg-gray-200 rounded-lg overflow-hidden">
+                    <img src="/source/img/rexBrunch.jpeg" class="w-full" alt="">
+                </div>
+                <div class="mt-1">
+                    <span class="font-medium">
+                        雷克斯各式早午餐
+                    </span>
+                    <span>
+                        $100.00
+                    </span>
+                </div>
+            </div>
+            <div class="w-1/2 h-24 pl-2">
+                <div class="w-full min-h-36 max-h-48 bg-gray-200 rounded-lg overflow-hidden">
+                    <img src="/source/img/rexBrunch.jpeg" class="w-full" alt="">
+                </div>
+                <div class="mt-1">
+                    <span class="font-medium">
+                        雷克斯各式早午餐
+                    </span>
+                    <span>
+                        $100.00
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 標題 second -->
+        <section id="second" class="count-down w-full px-4 mt-4 pb-4">
+
+            <div class="w-full bg-white relative">
+                <div class="">
+                    <h3 id="second" class="text-2xl font-bold tracking-tighter leading-sung">
+                        克斯ㄉ專屬推薦
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 second -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        說明文字在此，但我不知道要說明什麼，因此寫下這將近二十三分之四十六的廢話當作說明。
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 second -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <button type="button" class="px-1.5 py-1 mt-1 bg-gray-200 font-medium rounded-full relative">
+                    <div class="absolute top-1.5 left-2">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
+                        </svg>
+                    </div>
+                    <span class="text-black text-xs text-center ml-4">
+                        20%(1)
+                    </span>
+
+                </button>
+            </div>
+        </section>
+
+        <!-- 標題 third -->
+        <section id="third" class="count-down w-full px-4 mt-4 pb-4">
+
+            <div class="w-full bg-white relative">
+                <div class="">
+                    <h3 id="third" class="text-2xl font-bold tracking-tighter leading-sung">
+                        雷克斯套餐
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 third -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯小腿
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        說明文字在此，但我不知道要說明什麼，因此寫下這將近二十三分之四十六的廢話當作說明。
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 third -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <button type="button" class="px-1.5 py-1 mt-1 bg-gray-200 font-medium rounded-full relative">
+                    <div class="absolute top-1.5 left-2">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
+                        </svg>
+                    </div>
+                    <span class="text-black text-xs text-center ml-4">
+                        20%(1)
+                    </span>
+
+                </button>
+            </div>
+        </section>
+
+        <!-- 標題 fourth -->
+        <section id="fourth" class="count-down w-full px-4 mt-4 pb-4">
+
+            <div class="w-full bg-white relative">
+                <div class="">
+                    <h3 id="fourth" class="text-2xl font-bold tracking-tighter leading-sung">
+                        精選主食
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 fourth -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        說明文字在此，但我不知道要說明什麼，因此寫下這將近二十三分之四十六的廢話當作說明。
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 fourth -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <button type="button" class="px-1.5 py-1 mt-1 bg-gray-200 font-medium rounded-full relative">
+                    <div class="absolute top-1.5 left-2">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
+                        </svg>
+                    </div>
+                    <span class="text-black text-xs text-center ml-4">
+                        20%(1)
+                    </span>
+
+                </button>
+            </div>
+        </section>
+
+        <!-- 標題 fifth -->
+        <section id="fifth" class="count-down w-full px-4 mt-4 pb-4">
+
+            <div class="w-full bg-white relative">
+                <div class="">
+                    <h3 id="fifth" class="text-2xl font-bold tracking-tighter leading-sung">
+                        克斯熬製湯品
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+                <!-- 套餐 fifth -->
+                <section class="count-down w-full mb-4 flex px-4">
+
+                    <div class="w-1/2 pr-2">
+                        <div class="w-full min-h-36 max-h-48 bg-gray-200 rounded-lg overflow-hidden">
+                            <img src="/source/img/rexBrunch.jpeg" class="w-full" alt="">
+                        </div>
+                        <div class="mt-1">
+                            <span class="font-medium">
+                                昨天晚上剩的湯
+                            </span>
+                            <span>
+                                $100.00
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-1/2 h-24 pl-2">
+                        <div class="w-full min-h-36 max-h-48 bg-gray-200 rounded-lg overflow-hidden">
+                            <img src="/source/img/rexBrunch.jpeg" class="w-full" alt="">
+                        </div>
+                        <div class="mt-1">
+                            <span class="font-medium">
+                                今天早上涼掉的湯
+                            </span>
+                            <span>
+                                $100.00
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+        <!-- 標題 sixth -->
+        <section id="sixth" class="count-down w-full px-4 mt-4 pb-4">
+
+            <div class="w-full bg-white relative">
+                <div class="">
+                    <h3 id="sixth" class="text-2xl font-bold tracking-tighter leading-sung">
+                        雷克點心
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 sixth -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        說明文字在此，但我不知道要說明什麼，因此寫下這將近二十三分之四十六的廢話當作說明。
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 sixth -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <button type="button" class="px-1.5 py-1 mt-1 bg-gray-200 font-medium rounded-full relative">
+                    <div class="absolute top-1.5 left-2">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
+                        </svg>
+                    </div>
+                    <span class="text-black text-xs text-center ml-4">
+                        20%(1)
+                    </span>
+
+                </button>
+            </div>
+        </section>
+
+        <!-- 標題 seventh -->
+        <section id="seventh" class="count-down w-full px-4 mt-4 pb-4">
+
+            <div class="w-full bg-white relative">
+                <div class="">
+                    <h3 id="seventh" class="text-2xl font-bold tracking-tighter leading-sung">
+                        克斯現榨飲料
+                    </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 seventh -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        說明文字在此，但我不知道要說明什麼，因此寫下這將近二十三分之四十六的廢話當作說明。
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 套餐 seventh -->
+        <section class="count-down w-full px-4 mb-2">
+
+            <div class="w-full bg-white pb-2 relative">
+                <div class="">
+                    <h6 class="text-md font-bold tracking-tighter leading-sung">
+                        雷克斯的眼角膜
+                    </h6>
+                </div>
+                <div class="">
+                    <span class="text-sm tracking-tighter leading-sung">
+                        $87.00
+                    </span>
+                </div>
+                <button type="button" class="px-1.5 py-1 mt-1 bg-gray-200 font-medium rounded-full relative">
+                    <div class="absolute top-1.5 left-2">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z" />
+                        </svg>
+                    </div>
+                    <span class="text-black text-xs text-center ml-4">
+                        20%(1)
+                    </span>
+
+                </button>
+            </div>
+        </section>
+
+
+        <div class="h-36">
+
+        </div>
+
+        <!-- 下方四格選擇大功能 bottom navbar menu -->
+        <section class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 ">
+            <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium 
+        btm-menu
+        ">
+                <!-- 
+            bottom menu 
+            
+            顏色可由config更改
+        -->
+                <style>
+                    .btm-menu button:hover>span,
+                    .btm-menu button:hover>svg {
+                        color: var(--btm-icon-hover);
+                    }
+
+                    .btm-menu>button:hover {
+                        background-color: var(--btm-btn-hover);
+                    }
+                </style>
+                <!-- botton x4 按鈕 -->
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'selfPickUp.html';">
+                    <svg class="w-5 h-5 mb-2 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" class="stroke-gray-500" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2m-4-8s1-1 .5-2l-1-2C12 4 13 3 13 3M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2" />
+                    </svg>
+                    <span class="text-sm text-gray-500">自取</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'activity.html';">
+                    <svg class="w-5 h-5 mb-2 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" class="fill-[--btm-icon-hover]"
+                            d="M8.5 10.5l-.6-.8a1 1 0 00.153 1.694L8.5 10.5zm4 2l.99.141a1 1 0 00-.543-1.035l-.447.894zm-1.49 3.359a1 1 0 101.98.282l-1.98-.282zM12.5 7.5l.707-.707A1 1 0 0011.9 6.7l.6.8zM15 10l-.707.707A1 1 0 0015 11v-1zm2 1a1 1 0 100-2v2zm-9 5a2 2 0 01-2 2v2a4 4 0 004-4H8zm-2 2a2 2 0 01-2-2H2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm2.053-2.606l4 2 .894-1.788-4-2-.894 1.788zm3.457.965l-.5 3.5 1.98.282.5-3.5-1.98-.282zM9.1 11.3l4-3-1.2-1.6-4 3 1.2 1.6zm2.693-3.093l2.5 2.5 1.414-1.414-2.5-2.5-1.414 1.414zM15 11h2V9h-2v2zm5 5a2 2 0 01-2 2v2a4 4 0 004-4h-2zm-2 2a2 2 0 01-2-2h-2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm-3-9v2a2 2 0 002-2h-2zm0 0h-2a2 2 0 002 2V5zm0 0V3a2 2 0 00-2 2h2zm0 0h2a2 2 0 00-2-2v2z" />
+                    </svg>
+                    <span class="text-sm text-[--btm-icon-hover]">活動</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'orderFood.html';">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 22 22">
+                        <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2">
+                            <path stroke-linejoin="round" d="M3 5a1 1 0 011-1h16a1 1 0 011 1v3H3V5z" />
+                            <path stroke-linecap="round" d="M9.5 13h5" />
+                            <path stroke-linejoin="round" d="M4 8h16v11a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" />
+                        </g>
+                    </svg>
+                    <span class="text-sm text-gray-500 ">訂單</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'setting.html';">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M18 19v-1.25c0-2.071-1.919-3.75-4.286-3.75h-3.428C7.919 14 6 15.679 6 17.75V19m9-11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="text-sm text-gray-500 ">個人</span>
+                </button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
