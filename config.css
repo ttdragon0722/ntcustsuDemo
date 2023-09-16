@@ -1,4 +1,8 @@
 :root {
+    --calc-40:calc(40%);
+    --calc-half:calc(50%);
+    --calc-60:calc(60%);
+
     --btm-icon-hover: #F27813;
     --btm-btn-hover: aliceblue;
 
@@ -12,11 +16,22 @@
 
     --ad-bg: #EEEEEE;
 
+    --panel-bg:#114953;
+    --panel-line-color:rgba(128, 128, 128, 0.3);
+    --block-width:168px;
+    --block-height:240px;
+    --block-color:white;
+    --block-img-bg:#F3F3F3;
+    --block-padding:3%;
+    --tag-color:black;
 
 }
-
 /* app init */
 .app {
     margin: 0 auto;
     max-width: 425px;
+}
+
+.scroll-bar-hide::-webkit-scrollbar {
+    display: none;
 }

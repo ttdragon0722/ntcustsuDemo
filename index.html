@@ -149,7 +149,7 @@
             class AdPanel {
                 panel = $("#ad-panel");
                 constructor () {
-                    // gsap.set(this.panel,{y:"100%"})
+                    gsap.set(this.panel,{y:"100%",display:"none"})
                 }
                 check() {
                     self = this;
@@ -171,6 +171,69 @@
             adPanel = new AdPanel();
         </script>
     </section>
+    
+    <br>
+
+    <!-- 可滑動panel -->
+    <section class="w-full">
+        <!-- 表頭 -->
+        <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative"> 
+            <h1>最新消息</h1>
+            <h1 class="relative w-full">
+                NEWS
+                <i class="w-[85%] h-[2px] bg-[--panel-line-color] absolute right-0 bottom-1/4 rounded-full"></i>
+            </h1>
+        </div>
+        <!-- 可滑動panel -->
+        <div class="scroll-bar-hide w-full bg-gradient-to-b from-[--panel-bg] to-white overflow-x-scroll py-3">
+            <!-- list -->
+            <div class="px-5 inline-flex ">
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <!-- tag -->
+                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
+                        熱門的標籤
+                    </div>
+                    <div class="h-[--calc-60] w-full">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
+                    </div>
+                    <div class="h-[--calc-40] px-[--block-padding] relative">
+                        <p>賭城之夜門票(兩人同行一人免費)</p>
+                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
+                    </div>
+                </div>
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <!-- tag -->
+                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
+                        熱門的標籤
+                    </div>
+                    <div class="h-[--calc-60] w-full">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
+                    </div>
+                    <div class="h-[--calc-40] px-[--block-padding] relative">
+                        <p>賭城之夜門票(兩人同行一人免費)</p>
+                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
+                    </div>
+                </div>
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <!-- tag -->
+                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
+                        熱門的標籤
+                    </div>
+                    <div class="h-[--calc-60] w-full">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
+                    </div>
+                    <div class="h-[--calc-40] px-[--block-padding] relative">
+                        <p>賭城之夜門票(兩人同行一人免費)</p>
+                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 
