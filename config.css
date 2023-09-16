@@ -1,21 +1,26 @@
 :root {
+    /* 公用趴數變數 */
+    /* public setting */
+    --calc-30:calc(30%);
     --calc-40:calc(40%);
     --calc-half:calc(50%);
     --calc-60:calc(60%);
+    --calc-70:calc(70%);
 
+    /* 下menu顏色 */
     --btm-icon-hover: #F27813;
     --btm-btn-hover: aliceblue;
-
-    --btm-icon-hover2: "#F2D458";
+    --btm-icon-hover2: #F2D458;
     
-
+    /* map背景顏色 */
     --map-panel-bg: #F7F7F7;
-
     --button-bg1: #E11D6F;
     --button-color1: white;
 
+    /* ad 視窗顏色 */
     --ad-bg: #EEEEEE;
 
+    /* 可滑動視窗顏色 */
     --panel-bg:#114953;
     --panel-line-color:rgba(128, 128, 128, 0.3);
     --block-width:168px;
@@ -25,6 +30,24 @@
     --block-padding:3%;
     --tag-color:black;
 
+    /* food顏色視窗 */
+    --food-panel-width:330px;
+    --food-panel-height:240px;
+    --food-tag-bg:#E31771;
+    --food-tag-color:white;
+
+    --food-time-bg:white;
+    --food-time-bg-hover:black;
+    --food-time-color:black;
+    --food-time-color-hover:white;
+    
+    --icon-size:30px;
+    --icon-color:black;
+    --icon-bg:white;
+    --icon-hover-color:white;
+    --icon-hover-bg:black;
+
+    --food-content-color:#919191;
 }
 /* app init */
 .app {
@@ -32,6 +55,7 @@
     max-width: 425px;
 }
 
+/* 隱藏scroll bar */
 .scroll-bar-hide::-webkit-scrollbar {
     display: none;
 }
