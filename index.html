@@ -14,7 +14,8 @@
 </head>
 
 <body>
-<div class="app" style="height: 300vh;">
+<div class="app mb-[15vh]" >
+    <!-- header -->
     <section class="top-0 left-0 z-50 w-full bg-white border-t border-gray-200 bg-white">
         <!-- 大標題group -->
         <div class="relative">
@@ -79,7 +80,6 @@
             </button>
         </div>
     </section>
-
     <!-- 子功能選取列 x3 link -->
     <section class="flex pt-4 bg-white z-50" style="position: sticky;top:0;">
         <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
@@ -104,6 +104,7 @@
         </div>
     </section>
 
+    <!-- count down panel -->
     <section class="count-down
         w-full 
         p-3
@@ -118,8 +119,10 @@
                 style="transform: translateY(-50%);" alt="">
         </div>
     </section>
+
     <br>
-    <!-- map -->
+    
+    <!-- map panel-->
     <section style="background-color: var(--map-panel-bg);" class="map
         w-full
         p-1
@@ -135,7 +138,126 @@
         </div>
     </section>
 
-    <!-- ad -->
+    <br>
+
+    <!-- PANEL1 -->
+    <!-- 可滑動panel -->
+    <section class="w-full">
+        <!-- 表頭 -->
+        <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative"> 
+            <h1>最新消息</h1>
+            <h1 class="relative w-full">
+                NEWS
+                <i class="w-[85%] h-[2px] bg-[--panel-line-color] absolute right-0 bottom-1/4 rounded-full"></i>
+            </h1>
+        </div>
+        <!-- 可滑動panel -->
+        <div class="scroll-bar-hide w-full bg-gradient-to-b from-[--panel-bg] to-white overflow-x-scroll py-3">
+            <!-- list -->
+            <div class="px-5 inline-flex ">
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <!-- tag -->
+                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
+                        熱門的標籤
+                    </div>
+                    <div class="h-[--calc-60] w-full bg-[--block-img-bg]">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
+                    </div>
+                    <div class="h-[--calc-40] px-[--block-padding] relative">
+                        <p>賭城之夜門票(兩人同行一人免費)</p>
+                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
+                    </div>
+                </div>
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <!-- tag -->
+                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
+                        熱門的標籤
+                    </div>
+                    <div class="h-[--calc-60] w-full bg-[--block-img-bg]">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
+                    </div>
+                    <div class="h-[--calc-40] px-[--block-padding] relative">
+                        <p>賭城之夜門票(兩人同行一人免費)</p>
+                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
+                    </div>
+                </div>
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <!-- tag -->
+                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
+                        熱門的標籤
+                    </div>
+                    <div class="h-[--calc-60] w-full bg-[--block-img-bg]">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
+                    </div>
+                    <div class="h-[--calc-40] px-[--block-padding] relative">
+                        <p>賭城之夜門票(兩人同行一人免費)</p>
+                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <!-- PANEL2 -->
+    <!-- 可滑動panel -->
+    <section class="w-full mb-2">
+        <!-- 表頭 -->
+        <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative"> 
+            <h1>在地精選</h1>
+            <h1 class="relative w-full">
+                LOCAL
+                <i class="w-[85%] h-[2px] bg-[--panel-line-color] absolute right-0 bottom-1/4 rounded-full"></i>
+            </h1>
+        </div>
+        <!-- 可滑動panel -->
+        <div class="scroll-bar-hide w-full bg-gradient-to-b from-[--panel-bg] to-white overflow-x-scroll py-3">
+            <!-- list -->
+            <div class="px-5 inline-flex ">
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <div class="h-full w-full bg-[--block-img-bg]">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/250x500/">
+                    </div>
+                </div>
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <div class="h-full w-full bg-[--block-img-bg]">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/250x500/">
+                    </div>
+                </div>
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <div class="h-full w-full bg-[--block-img-bg]">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/250x500/">
+                    </div>
+                </div>
+                <!-- block -->
+                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
+                    <div class="h-full w-full bg-[--block-img-bg]">
+                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/250x500/">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <br>
+
+    <!-- list -->
+    <section class="w-full flex flex-wrap">
+        <div class="w-[--calc-half] h-[325px] bg-gray-500 ">
+            
+        </div>
+    </section>
+
+    <!-- fixed element -->
+    <!-- ad jump screen-->
     <section id="ad-panel" class="fixed bottom-0 left-0 z-50 w-full h-[35vh] p-3">
         <!-- panel -->
         <div class="bg-[--ad-bg] rounded-t-xl w-full h-full pt-8 px-3 text-center relative">
@@ -171,72 +293,6 @@
             adPanel = new AdPanel();
         </script>
     </section>
-    
-    <br>
-
-    <!-- 可滑動panel -->
-    <section class="w-full">
-        <!-- 表頭 -->
-        <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative"> 
-            <h1>最新消息</h1>
-            <h1 class="relative w-full">
-                NEWS
-                <i class="w-[85%] h-[2px] bg-[--panel-line-color] absolute right-0 bottom-1/4 rounded-full"></i>
-            </h1>
-        </div>
-        <!-- 可滑動panel -->
-        <div class="scroll-bar-hide w-full bg-gradient-to-b from-[--panel-bg] to-white overflow-x-scroll py-3">
-            <!-- list -->
-            <div class="px-5 inline-flex ">
-                <!-- block -->
-                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
-                    <!-- tag -->
-                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
-                        熱門的標籤
-                    </div>
-                    <div class="h-[--calc-60] w-full">
-                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
-                    </div>
-                    <div class="h-[--calc-40] px-[--block-padding] relative">
-                        <p>賭城之夜門票(兩人同行一人免費)</p>
-                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
-                    <!-- tag -->
-                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
-                        熱門的標籤
-                    </div>
-                    <div class="h-[--calc-60] w-full">
-                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
-                    </div>
-                    <div class="h-[--calc-40] px-[--block-padding] relative">
-                        <p>賭城之夜門票(兩人同行一人免費)</p>
-                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--block-width] h-[--block-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg">
-                    <!-- tag -->
-                    <div class="absolute border border-[--tag-color] text-[--tag-color] top-[2%] left-[--block-padding] text-xs pl-1 py-1 pr-3 rounded-lg">
-                        熱門的標籤
-                    </div>
-                    <div class="h-[--calc-60] w-full">
-                        <img class="w-full h-full object-center object-contain" src="https://fakeimg.pl/300x250/">
-                    </div>
-                    <div class="h-[--calc-40] px-[--block-padding] relative">
-                        <p>賭城之夜門票(兩人同行一人免費)</p>
-                        <div class="font-black absolute left-[--block-padding] bottom-0">NT$ 100起</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
     <!-- 下方四格選擇大功能 bottom navbar menu -->
     <section class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 ">
         <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium 
