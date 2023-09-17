@@ -48,6 +48,9 @@
     --icon-hover-bg:black;
 
     --food-content-color:#919191;
+
+    --ls-tag-bg:#FFEDEA;
+    --ls-tag-color:#FF734A;
 }
 /* app init */
 .app {
