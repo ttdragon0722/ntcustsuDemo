@@ -2,6 +2,7 @@
 
 <!-- 自取 - 惜食福袋 -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,868 +12,1038 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
         integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+
 </head>
+
 <body>
-<div class="app">
-<!-- 上方模板 -->
-<section class="top-0 left-0 z-50 w-full bg-white border-t border-gray-200 bg-white">
-    <!-- 大標題group -->
-    <div class="relative">
-        <h1 class="ml-4 mt-4 text-2xl font-bold">
-            外帶自取
-        </h1>
-        <!-- 標籤 icon -->
-        <button type="submit"
-            class="text-white absolute right-10 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2">
-            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
-                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M3 10.95V6a1 1 0 011-1h4.95a1 1 0 01.707.293l7.636 7.636a1 1 0 010 1.415l-4.95 4.949a1 1 0 01-1.414 0l-7.636-7.636A1 1 0 013 10.948z"/><path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M15.636 20l5.657-5.656a1 1 0 000-1.415L13.363 5"/><circle xmlns="http://www.w3.org/2000/svg" cx="6.5" cy="8.5" r="1.5" fill="currentColor"/>
-            </svg>
-        </button>
-        <!-- 收藏 icon -->
-        <button type="submit"
-            class="text-white absolute right-0 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2"
-            onclick="location.href = 'collectFood.html'"    
-        >
-            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
-                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.574-1.635-4.46-2.135-6.035-.5-1.573 1.635-1.34 3.836 0 5.752C7.306 15.168 9.41 16.89 12 19c2.59-2.11 4.694-3.832 6.035-5.748 1.34-1.916 1.573-4.117 0-5.752C16.46 5.865 13.574 6.365 12 8z"/>
-            </svg>
-        </button>
-    </div>
-    <!-- 選取地址group -->
-    <div class="relative">
-        <h3 class="ml-4 mt-1 mb-2 text-sm">
-            標記您的位置
-        </h3>
-        <!-- 標籤 icon -->
-        <button type="submit"
-            class="text-white left-[110px] absolute top-[-3px] bg-inherit font-sm rounded-lg text-sm ">
-            <svg class="w-3 h-3 mb-2 text-gray-500 dark:text-gray-400 mt-2" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
-                <path xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-width="2" d="M5 10l7 7 7-7"/>
-            </svg>
-        </button>
-    </div>
+    <div class="app">
+        <!-- 上方模板 -->
+        <section class="top-0 left-0 z-50 w-full bg-white border-t border-gray-200 bg-white">
+            <!-- 大標題group -->
+            <div class="relative">
+                <h1 class="ml-4 mt-4 text-2xl font-bold">
+                    外帶自取
+                </h1>
+                <!-- 標籤 icon -->
+                <button type="submit"
+                    class="text-white absolute right-10 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 10.95V6a1 1 0 011-1h4.95a1 1 0 01.707.293l7.636 7.636a1 1 0 010 1.415l-4.95 4.949a1 1 0 01-1.414 0l-7.636-7.636A1 1 0 013 10.948z" />
+                        <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round"
+                            stroke-width="2" d="M15.636 20l5.657-5.656a1 1 0 000-1.415L13.363 5" />
+                        <circle xmlns="http://www.w3.org/2000/svg" cx="6.5" cy="8.5" r="1.5" fill="currentColor" />
+                    </svg>
+                </button>
+                <!-- 收藏 icon -->
+                <button type="submit"
+                    class="text-white absolute right-0 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2"
+                    onclick="location.href = 'collectFood.html'">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12 8c-1.574-1.635-4.46-2.135-6.035-.5-1.573 1.635-1.34 3.836 0 5.752C7.306 15.168 9.41 16.89 12 19c2.59-2.11 4.694-3.832 6.035-5.748 1.34-1.916 1.573-4.117 0-5.752C16.46 5.865 13.574 6.365 12 8z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- 選取地址group -->
+            <div class="relative">
+                <h3 class="ml-4 mt-1 mb-2 text-sm">
+                    標記您的位置
+                </h3>
+                <!-- 標籤 icon -->
+                <button type="submit"
+                    class="text-white left-[110px] absolute top-[-3px] bg-inherit font-sm rounded-lg text-sm ">
+                    <svg class="w-3 h-3 mb-2 text-gray-500 dark:text-gray-400 mt-2" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-width="2"
+                            d="M5 10l7 7 7-7" />
+                    </svg>
+                </button>
+            </div>
 
-    <!-- 搜尋group -->
-    <div class="relative">
-        <!-- 搜尋icon -->
-        <div class="absolute inset-y-0 left-3 flex items-center pl-4 pointer-events-none">
-            <svg class="w-3 h-3 text-slate-600 dark:text-gray-400" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-            </svg>
-        </div>
-        <!-- input -->
-        <input type="search"
-            class="block w-[80%] px-4 py-1 ml-4 pl-8 mr-6 text-sm text-gray-900 rounded-full bg-gray-50"
-            placeholder="搜尋附近的餐廳">
-        <!-- 篩選 icon -->
-        <button type="submit"
-            class="text-white absolute right-0 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2">
-            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
-                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2"
-                    d="M12 4v10m0 6v-.5M17.5 4v5m0 11v-5.56M6.5 4v2m0 14v-8.44M6.5 6a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5.5 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5.5-5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
-            </svg>
-        </button>
-    </div>
-</section>
-<!-- 子功能選取列 x3 link -->
-<section class="flex pt-4 bg-white z-20" style="position: sticky;top:0;">
-    <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
+            <!-- 搜尋group -->
+            <div class="relative">
+                <!-- 搜尋icon -->
+                <div class="absolute inset-y-0 left-3 flex items-center pl-4 pointer-events-none">
+                    <svg class="w-3 h-3 text-slate-600 dark:text-gray-400" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <!-- input -->
+                <input type="search" class="block w-[80%] px-4 py-1 ml-4 pl-8 mr-6 text-sm text-gray-900 rounded-full 
+            -50" placeholder="搜尋附近的餐廳">
+                <!-- 篩選 icon -->
+                <button type="submit"
+                    class="text-white absolute right-0 top-[-3px] bg-inherit font-medium rounded-lg text-sm px-4 py-2">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 " aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M12 4v10m0 6v-.5M17.5 4v5m0 11v-5.56M6.5 4v2m0 14v-8.44M6.5 6a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5.5 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm5.5-5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+        <!-- 子功能選取列 x3 link -->
+        <section class="flex pt-4 bg-white z-20" style="position: sticky;top:0;">
+            <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
 
-    </div>
-    <button class="w-1/3 flex justify-center text-xs font-bold" onclick="window.location.href = 'selfPickUp.html'">
-        <span
-            class="text-[--btm-icon-hover] px-2 pb-1 border border-solid border-0 border-b-2 border-[--btm-icon-hover]">
-            一般自取
-        </span>
-    </button>
-    <button class="w-1/3 flex justify-center text-xs font-bold" onclick="window.location.href = 'cherish.html'">
-        <span>
+            </div>
+            <button class="w-1/3 flex justify-center text-xs font-bold"
+                onclick="window.location.href = 'selfPickUp.html'">
+                <span
+                    class="text-[--btm-icon-hover] px-2 pb-1 border border-solid border-0 border-b-2 border-[--btm-icon-hover]">
+                    一般自取
+                </span>
+            </button>
+            <button class="w-1/3 flex justify-center text-xs font-bold" onclick="window.location.href = 'cherish.html'">
+                <span>
 
-            惜食福袋
-        </span>
-    </button>
-    <button class="w-1/3 flex justify-center text-xs font-bold" onclick="window.location.href = 'shopSell.html'">
-        <span>
-            店家開團
-        </span>
-    </button>
-</section>
+                    惜食福袋
+                </span>
+            </button>
+            <button class="w-1/3 flex justify-center text-xs font-bold"
+                onclick="window.location.href = 'shopSell.html'">
+                <span>
+                    店家開團
+                </span>
+            </button>
+        </section>
 
-<!-- 內容開始 -->
+        <!-- 內容開始 -->
 
-    <!-- 開搶panel count down panel -->
-    <section class="count-down
+        <!-- 開搶panel count down panel -->
+        <section class="count-down
         w-full 
         p-3
     ">
-        <!-- panel -->
-        <div class="w-full bg-white border-2 rounded-lg px-5 pt-2 pb-5 relative  ">
-            <!-- 標題 -->
-            <h1 class="font-black my-2 text-2xl tracking-tighter">
-                13 分 29秒後開搶！
-            </h1>
-            <!-- 文字 -->
-            <p class="text-xs">每天11:00和17:00開搶限量美食優惠劵</p>
-            <!-- 圖片，使用position定位強行黏在右邊 -->
-            <img src="source/img/搶.png" class="absolute right-0 top-1/2 w-[23%]"
-                style="transform: translateY(-50%);" alt="">
-        </div>
-    </section>
-
-    <!-- map panel-->
-    <section class="map w-full p-1 bg-[--map-panel-bg]">
-        <!-- panel -->
-        <div class="rounded-lg">
-            <!-- 上方大圖 -->
-            <img class="w-full" src="source/img/map.png" alt="">
-            <!-- 下方文字 -->
-            <div class="px-5 py-4 bg-white relative">
-                <!-- 文字敘述 -->
-                <p class="font-black text-m">探索附近的美食</p>
-                <!-- 按鈕部分，使用position定位強行黏在右邊 -->
-                <button style="transform: translateY(-50%);"
-                    class="px-3 py-2 rounded-lg font-bold absolute right-1 top-1/2 text-sm bg-[--button-bg1] text-[--button-color1]">顯示地圖</button>
+            <!-- panel -->
+            <div class="w-full bg-white border-2 rounded-lg px-5 pt-2 pb-5 relative" data-modal-target="staticModal2"
+                data-modal-toggle="staticModal2">
+                <!-- 標題 -->
+                <h1 class="font-black my-2 text-2xl tracking-tighter">
+                    13 分 29秒後開搶！
+                </h1>
+                <!-- 文字 -->
+                <p class="text-xs">每天11:00和17:00開搶限量美食優惠劵</p>
+                <!-- 圖片，使用position定位強行黏在右邊 -->
+                <img src="source/img/搶.png" class="absolute right-0 top-1/2 w-[23%]"
+                    style="transform: translateY(-50%);" alt="">
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- map panel-->
+        <section class="map w-full p-1 bg-[--map-panel-bg]">
+            <!-- panel -->
+            <div class="rounded-lg">
+                <!-- 上方大圖 -->
+                <img class="w-full" src="source/img/map.png" alt="">
+                <!-- 下方文字 -->
+                <div class="px-5 py-4 bg-white relative">
+                    <!-- 文字敘述 -->
+                    <p class="font-black text-m">探索附近的美食</p>
+                    <!-- 按鈕部分，使用position定位強行黏在右邊 -->
+                    <button style="transform: translateY(-50%);" onclick="location.href='foodMapPage.html'"
+                        class="px-3 py-2 rounded-lg font-bold absolute right-1 top-1/2 text-sm bg-[--button-bg1] text-[--button-color1]">顯示地圖</button>
+                </div>
+            </div>
+        </section>
 
         <!-- food panel -->
-    <!-- 可滑動panel -->
-    <section class="w-full">
-        <!-- 表頭 -->
-        <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative"> 
-            <!-- 標題 -->
-            <h1>專數の優惠</h1>
-        </div>
         <!-- 可滑動panel -->
-        <div class="scroll-bar-hide w-full to-white overflow-x-scroll pb-5">
-            <!-- 元件群組 -->
-            <div class="inline-flex">
-                <!-- todo : 可以改成button或a，方便後續處理 -->
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
-                        </div>
+        <section class="w-full">
+            <!-- 表頭 -->
+            <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative">
+                <!-- 標題 -->
+                <h1>專數の優惠</h1>
+            </div>
+            <!-- 可滑動panel -->
+            <div class="scroll-bar-hide w-full to-white overflow-x-scroll pb-5">
+                <!-- 元件群組 -->
+                <div class="inline-flex">
+                    <!-- todo : 可以改成button或a，方便後續處理 -->
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
-                        </div>
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
                         </div>
-
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
                         </div>
-
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
                         </div>
+                    </div>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
+                    </div>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
         <!-- food2 panel -->
-    <!-- 可滑動panel -->
-    <section class="w-full">
-        <!-- 表頭 -->
-        <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative"> 
-            <!-- 標題 -->
-            <h1>好想喝飲料</h1>
-        </div>
         <!-- 可滑動panel -->
-        <div class="scroll-bar-hide w-full to-white overflow-x-scroll pb-5">
-            <!-- 元件群組 -->
-            <div class="inline-flex">
-                <!-- todo : 可以改成button或a，方便後續處理 -->
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
-                        </div>
+        <section class="w-full">
+            <!-- 表頭 -->
+            <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative">
+                <!-- 標題 -->
+                <h1>好想喝飲料</h1>
+            </div>
+            <!-- 可滑動panel -->
+            <div class="scroll-bar-hide w-full to-white overflow-x-scroll pb-5">
+                <!-- 元件群組 -->
+                <div class="inline-flex">
+                    <!-- todo : 可以改成button或a，方便後續處理 -->
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
-                        </div>
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
                         </div>
-
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
                         </div>
-
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
                         </div>
+                    </div>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
+                    </div>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- food3 panel -->
-    <!-- 可滑動panel -->
-    <section class="w-full">
-        <!-- 表頭 -->
-        <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative"> 
-            <!-- 標題 -->
-            <h1>走路10分鐘</h1>
-        </div>
+        </section>
+        <!-- food3 panel -->
         <!-- 可滑動panel -->
-        <div class="scroll-bar-hide w-full to-white overflow-x-scroll pb-5">
-            <!-- 元件群組 -->
-            <div class="inline-flex">
-                <!-- todo : 可以改成button或a，方便後續處理 -->
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
-                        </div>
+        <section class="w-full">
+            <!-- 表頭 -->
+            <div class="text-2xl font-black pl-3 mt-3 mb-1 w-full relative">
+                <!-- 標題 -->
+                <h1>走路10分鐘</h1>
+            </div>
+            <!-- 可滑動panel -->
+            <div class="scroll-bar-hide w-full to-white overflow-x-scroll pb-5">
+                <!-- 元件群組 -->
+                <div class="inline-flex">
+                    <!-- todo : 可以改成button或a，方便後續處理 -->
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
-                        </div>
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
                         </div>
-
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
                         </div>
-
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
-                    </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
-                    </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
-                    </div>
-                </div>
-                <!-- block -->
-                <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3" onclick="location.href='foodBuyPage.html'">
-                    <!-- 圖片及icon -->
-                    <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
-                        <!-- 大圖 -->
-                        <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
-                        
-                        <!-- 左下 取餐時間 icon -->
-                        <div class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
-                            取餐時間10分鐘
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
                         </div>
+                    </div>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
 
-                        <!-- 右上 愛心icon -->
-                        <button class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
-                            <i class="fa-regular fa-heart text-xl"></i>
-                        </button>
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
-                    <!-- 上方標籤 tag -->
-                    <div class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
-                        七月外帶69折
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
-                    <!-- 下方敘述 -->
-                    <div class="h-[--calc-30] px-[--block-padding] relative pt-2" >
-                        <!-- 標題 -->
-                        <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
-                        <!-- 敘述 -->
-                        <p class="text-[--food-content-color] text-sm">
-                            $ . 飲料                            
-                        </p>
-                        <p class="text-[--food-content-color] text-sm">
-                            280 公尺 距離
-                        </p>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
+                    </div>
+                    <!-- block -->
+                    <div class="w-[--food-panel-width] h-[--food-panel-height] bg-[--block-color] rounded-lg overflow-hidden flex flex-col relative mx-2 drop-shadow-lg pb-3"
+                        onclick="location.href='foodBuyPage.html'">
+                        <!-- 圖片及icon -->
+                        <div class="h-[--calc-70] w-full bg-[--block-img-bg] rounded-lg relative">
+                            <!-- 大圖 -->
+                            <img class="w-full h-full object-center object-cover rounded-lg" src="source/img/drink.jpg">
+
+                            <!-- 左下 取餐時間 icon -->
+                            <div
+                                class="rounded-lg px-2 py-1 bg-[--food-time-bg] text-[--food-time-color] absolute left-[3%] bottom-[10%] text-xs font-bold">
+                                取餐時間10分鐘
+                            </div>
+
+                            <!-- 右上 愛心icon -->
+                            <button
+                                class="absolute top-[5%] right-[2%] bg-white rounded-full w-[--icon-size] h-[--icon-size] text-center flex justify-center items-center hover:bg-[--icon-hover-bg] hover:text-[--icon-hover-color] transition-colors duration-300">
+                                <i class="fa-regular fa-heart text-xl"></i>
+                            </button>
+                        </div>
+                        <!-- 上方標籤 tag -->
+                        <div
+                            class="absolute text-[--food-tag-color] bg-[--food-tag-bg] top-[5%] text-sm font-semibold px-3 py-1 rounded-r-lg drop-shadow-lg">
+                            七月外帶69折
+                        </div>
+                        <!-- 下方敘述 -->
+                        <div class="h-[--calc-30] px-[--block-padding] relative pt-2">
+                            <!-- 標題 -->
+                            <h1 class="text-lg font-black">青軸茶是 (台中三名店)</h1>
+                            <!-- 敘述 -->
+                            <p class="text-[--food-content-color] text-sm">
+                                $ . 飲料
+                            </p>
+                            <p class="text-[--food-content-color] text-sm">
+                                280 公尺 距離
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <div class="h-24">
+
         </div>
-    </section>
 
-    <div class="h-24">
+        <!-- fixed element -->
+        <!-- 下方廣告上滑頁面-->
+        <section id="ad-panel" class="fixed bottom-0 left-0 z-30 h-[20vh] w-full">
+            <!-- panel -->
+            <div onclick='' class="bg-[--button-bg1] text-white rounded-t-xl w-full h-full text-center relative">
+                <div class="w-full h-full py-4 px-4" data-modal-target="staticModal" data-modal-toggle="staticModal">
+                    <span class="text-lg">
 
-    </div>
-
-    <!-- fixed element -->
-    <!-- 下方廣告上滑頁面-->
-    <section id="ad-panel" class="fixed bottom-0 left-0 z-30 h-[20vh] w-full" >
-        <!-- panel -->
-        <div onclick='' class="bg-gray-700 text-white rounded-t-xl w-full h-full text-center relative">
-            <div class="w-full h-full py-4 px-4" data-modal-target="staticModal" data-modal-toggle="staticModal">
-                <span class="text-lg">
-
-                    【中科大 | 校園演唱會】 搶票中！！
-                </span>
-                <br>
-                <span class="text-sm">
-                    點擊此處立刻前往
-                </span>
+                        【中科大 | 校園演唱會】 搶票中！！
+                    </span>
+                    <br>
+                    <span class="text-sm">
+                        點擊此處立刻前往
+                    </span>
+                </div>
+                <!-- 關閉按鈕 -->
+                <button class="absolute right-0 py-2 px-3 top-0 z-[50]" onclick="adPanel.check()">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+                <!-- 內文 -->
             </div>
-            <!-- 關閉按鈕 -->
-            <button class="absolute right-3 top-0 z-[50]" onclick="adPanel.check()">
-                X
-            </button>
-            <!-- 內文 -->
-        </div>
-        <div class=" p-3 w-full " >
+            <div class=" p-3 w-full ">
 
-        </div>
+            </div>
 
-        <script>
-            /**
-             * ad panel
-             * check做開關
-             * */ 
-            class AdPanel { 
-                panel = $("#ad-panel");
-                constructor () {
-                    // gsap.set(this.panel,{y:"100%",display:"none"})
-                }
-                check() {
-                    self = this;
-                    if (this.panel.is(":hidden")) {
+            <script>
+                /**
+                 * ad panel
+                 * check做開關
+                 * */
+                class AdPanel {
+                    panel = $("#ad-panel");
+                    constructor() {
+                        // gsap.set(this.panel,{y:"100%",display:"none"})
+                    }
+                    check() {
+                        self = this;
+                        if (this.panel.is(":hidden")) {
+                            this.panel.show();
+                            this.open();
+                        } else {
+                            gsap.to(this.panel, {
+                                y: "100%", duration: 0.3, ease: "power", onComplete: () => {
+                                    this.panel.hide();
+                                }
+                            })
+                        }
+                    }
+                    open() {
                         this.panel.show();
-                        this.open();
-                    } else {
-                        gsap.to(this.panel,{y:"100%",duration:0.3,ease:"power",onComplete:()=>{
-                        this.panel.hide();
-                    }})
+                        gsap.to(this.panel, { y: 0, duration: 0.3, ease: "power" });
                     }
                 }
-                open() {
-                    this.panel.show();
-                    gsap.to(this.panel,{y:0,duration:0.3,ease:"power"});
-                }
-            }
-            
-            adPanel = new AdPanel();
-        </script>
-    </section>
 
-    <!-- 廣告向上彈出大視窗 -->
-    <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
-        class="fixed top-0 left-0 right-0 z-50 hidden w-full pt-48 overflow-x-hidden overflow-y-hidden max-h-full h-full">
-        <div class="relative w-full max-w-2xl max-h-full h-full">
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-t-lg shadow dark:bg-gray-700 max-h-full h-full">
-                <!-- Modal header -->
-                <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                        【中科大 | 校園演唱會】
-                        <br>
-                        正在搶票中！
-                    </h3>
-                    <button type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                        data-modal-hide="staticModal">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                </div>
-                <!-- Modal body -->
-                <div class="p-6 space-y-6">
-                    <div class="">
-                        <div class="px-4 w-full max-h-48 overflow-hidden">
-                            <img src="source/img/S__12501065.jpg" alt="">
+                const adPanel = new AdPanel();
+            </script>
+        </section>
+
+        <!-- 廣告向上彈出大視窗 -->
+        <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full pt-48 overflow-x-hidden overflow-y-hidden max-h-full h-full">
+            <div class="relative w-full max-w-2xl max-h-full h-full">
+                <!-- Modal content -->
+                <div class="relative  bg-[--button-bg1] rounded-t-lg shadow dark: bg-[--button-bg1] max-h-full h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-white">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            【中科大 | 校園演唱會】
+                            <br>
+                            正在搶票中！
+                        </h3>
+                        <button type="button"
+                            class="text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <div class=" max-h-full overflow-y-auto">
+                            <div class="px-4 w-full max-h-48 overflow-hidden">
+                                <img src="source/img/S__12501065.jpg" alt="">
+                            </div>
+                            <label for="small-input"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                【2022｜校園演唱會】<br>
+
+                                睽違已久的校園演唱會再度來臨⋯<br>
+                                被疫情影響的這些年<br>
+                                各位想在演唱會盡情和偶像歡唱的心<br>
+                                就像學校各處側門一樣被塵封很久了吧！！！<br>
+                                煙霧彌漫 明月高照🌙<br>
+                                讓我們一起沈浸<br>
+                                🌗屬於我們的夜晚—吾夜🌒<br>
+                            </label>
+
+                            <div class="w-full flex justify-center">
+
+                                <button class="w-4/5 bg-[--main-color] text-white rounded-lg py-2"
+                                    onclick="location.href = 'activityInfo.html'">
+                                    立即前往搶購
+                                </button>
+                            </div>
+
+                            <div class="h-36">
+                            </div>
+
+
                         </div>
-                        <label for="small-input"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            【2022｜校園演唱會】<br>
-
-                    睽違已久的校園演唱會再度來臨⋯<br>
-                    被疫情影響的這些年<br>
-                    各位想在演唱會盡情和偶像歡唱的心<br>
-                    就像學校各處側門一樣被塵封很久了吧！！！<br>
-                    煙霧彌漫 明月高照🌙<br>
-                    讓我們一起沈浸<br>
-                    🌗屬於我們的夜晚—吾夜🌒<br>
-                        </label>
-
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- 廣告向上彈出大視窗2 -->
+        <div id="staticModal2" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full pt-48 overflow-x-hidden overflow-y-hidden max-h-full h-full">
+            <div class="relative w-full max-w-2xl max-h-full h-full">
+                <!-- Modal content -->
+                <div class="relative  bg-[--button-bg1] rounded-t-lg shadow dark: bg-[--button-bg1] max-h-full h-full">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-white">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            限量優惠卷，限時領取中
+                        </h3>
+                        <button type="button"
+                            class="text-white bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal2">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <div class=" max-h-full overflow-y-auto">
+                            <div class="px-4 w-full max-h-48 overflow-hidden">
+                                <img src="source/img/rexBrunch.jpeg" alt="">
+                            </div>
+                            <label for="small-input"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                <span class="font-bold text-lg">
+
+                                    雷克斯漢堡 台中倉平店
+                                </span>
+                                <br>
+                                <br>
+                                雷克斯早午餐店，是一家位於市中心的受歡迎的用餐地點。這家小而溫馨的餐廳提供了多種美味的早午餐選項，讓您可以在任何時間都能品味到新鮮、美味的食物。
+                                <br>
+                                雷克斯早午餐店以其多樣化的菜單而聞名，包括經典的煎蛋、培根和香腸早餐，以及創意無限的沙拉和三明治選項。無論您是想享受一頓健康的輕食，還是渴望一份豐盛的大餐，這裡都能滿足您的需求。
+                                <br>
+                                此外，雷克斯早午餐店注重食材的新鮮度和品質，確保每一道菜都充滿美味和營養價值。無論是與家人、朋友，還是單獨品味，這個餐廳都提供了一個愉快的用餐體驗。
+                                <br>
+                                如果您正在尋找一個舒適的地方，享受美味的早午餐，雷克斯早午餐店絕對是一個不容錯過的選擇。來訪這家餐廳，您將感受到親切的服務和令人難以抗拒的美味食物，定能為您的用餐體驗增添滿滿的樂趣。
+                            </label>
+
+                            <div class="w-full flex justify-center">
+
+                                <button class="w-4/5 bg-[--main-color] text-white rounded-lg py-2"
+                                    onclick="location.href = 'foodBuyPage.html'">
+                                    立即前往領取優惠卷
+                                </button>
+                            </div>
+
+                            <div class="h-36">
+                            </div>
 
 
-<!-- 下方四格選擇大功能 bottom navbar menu -->
-<section class="fixed bottom-0 left-0 z-40 w-full h-16 bg-white border-t border-gray-200 ">
-    <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 下方四格選擇大功能 bottom navbar menu -->
+        <section class="fixed bottom-0 left-0 z-40 w-full h-16 bg-white border-t border-gray-200 ">
+            <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium 
         btm-menu
         ">
-        <!-- 
+                <!-- 
             bottom menu 
             
             顏色可由config更改
         -->
-        <style>
-            .btm-menu button:hover>span,
-            .btm-menu button:hover>svg {
-                color: var(--btm-icon-hover);
-            }
+                <style>
+                    .btm-menu button:hover>span,
+                    .btm-menu button:hover>svg {
+                        color: var(--btm-icon-hover);
+                    }
 
-            .btm-menu>button:hover {
-                background-color: var(--btm-btn-hover);
-            }
-        </style>
-        <!-- botton x4 按鈕 -->
-        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
-            onclick="window.location.href = 'selfPickUp.html';">
-            <svg class="w-5 h-5 mb-2 " aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
-                <path xmlns="http://www.w3.org/2000/svg" class="stroke-[--btm-icon-hover]" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2m-4-8s1-1 .5-2l-1-2C12 4 13 3 13 3M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2"/>
-            </svg>
-            <span class="text-sm text-[--btm-icon-hover]">自取</span>
-        </button>
-        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
-            onclick="window.location.href = 'activity.html';">
-            <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
-                <path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M8.5 10.5l-.6-.8a1 1 0 00.153 1.694L8.5 10.5zm4 2l.99.141a1 1 0 00-.543-1.035l-.447.894zm-1.49 3.359a1 1 0 101.98.282l-1.98-.282zM12.5 7.5l.707-.707A1 1 0 0011.9 6.7l.6.8zM15 10l-.707.707A1 1 0 0015 11v-1zm2 1a1 1 0 100-2v2zm-9 5a2 2 0 01-2 2v2a4 4 0 004-4H8zm-2 2a2 2 0 01-2-2H2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm2.053-2.606l4 2 .894-1.788-4-2-.894 1.788zm3.457.965l-.5 3.5 1.98.282.5-3.5-1.98-.282zM9.1 11.3l4-3-1.2-1.6-4 3 1.2 1.6zm2.693-3.093l2.5 2.5 1.414-1.414-2.5-2.5-1.414 1.414zM15 11h2V9h-2v2zm5 5a2 2 0 01-2 2v2a4 4 0 004-4h-2zm-2 2a2 2 0 01-2-2h-2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm-3-9v2a2 2 0 002-2h-2zm0 0h-2a2 2 0 002 2V5zm0 0V3a2 2 0 00-2 2h2zm0 0h2a2 2 0 00-2-2v2z"/>
-            </svg>
-            <span class="text-sm text-gray-500 ">活動</span>
-        </button>
-        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
-            onclick="window.location.href = 'orderFood.html';">
-            <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
-                <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2"><path stroke-linejoin="round" d="M3 5a1 1 0 011-1h16a1 1 0 011 1v3H3V5z"/><path stroke-linecap="round" d="M9.5 13h5"/><path stroke-linejoin="round" d="M4 8h16v11a1 1 0 01-1 1H5a1 1 0 01-1-1V8z"/></g>
-            </svg>
-            <span class="text-sm text-gray-500 ">訂單</span>
-        </button>
-        <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
-            onclick="window.location.href = 'setting.html';">
-            <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
-                <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 19v-1.25c0-2.071-1.919-3.75-4.286-3.75h-3.428C7.919 14 6 15.679 6 17.75V19m9-11a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
-            <span class="text-sm text-gray-500 ">個人</span>
-        </button>
+                    .btm-menu>button:hover {
+                        background-color: var(--btm-btn-hover);
+                    }
+                </style>
+                <!-- botton x4 按鈕 -->
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'selfPickUp.html';">
+                    <svg class="w-5 h-5 mb-2 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" class="stroke-[--btm-icon-hover]"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2m-4-8s1-1 .5-2l-1-2C12 4 13 3 13 3M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2" />
+                    </svg>
+                    <span class="text-sm text-[--btm-icon-hover]">自取</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'activity.html';">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            d="M8.5 10.5l-.6-.8a1 1 0 00.153 1.694L8.5 10.5zm4 2l.99.141a1 1 0 00-.543-1.035l-.447.894zm-1.49 3.359a1 1 0 101.98.282l-1.98-.282zM12.5 7.5l.707-.707A1 1 0 0011.9 6.7l.6.8zM15 10l-.707.707A1 1 0 0015 11v-1zm2 1a1 1 0 100-2v2zm-9 5a2 2 0 01-2 2v2a4 4 0 004-4H8zm-2 2a2 2 0 01-2-2H2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm2.053-2.606l4 2 .894-1.788-4-2-.894 1.788zm3.457.965l-.5 3.5 1.98.282.5-3.5-1.98-.282zM9.1 11.3l4-3-1.2-1.6-4 3 1.2 1.6zm2.693-3.093l2.5 2.5 1.414-1.414-2.5-2.5-1.414 1.414zM15 11h2V9h-2v2zm5 5a2 2 0 01-2 2v2a4 4 0 004-4h-2zm-2 2a2 2 0 01-2-2h-2a4 4 0 004 4v-2zm-2-2a2 2 0 012-2v-2a4 4 0 00-4 4h2zm2-2a2 2 0 012 2h2a4 4 0 00-4-4v2zm-3-9v2a2 2 0 002-2h-2zm0 0h-2a2 2 0 002 2V5zm0 0V3a2 2 0 00-2 2h2zm0 0h2a2 2 0 00-2-2v2z" />
+                    </svg>
+                    <span class="text-sm text-gray-500 ">活動</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'orderFood.html';">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 22 22">
+                        <g xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2">
+                            <path stroke-linejoin="round" d="M3 5a1 1 0 011-1h16a1 1 0 011 1v3H3V5z" />
+                            <path stroke-linecap="round" d="M9.5 13h5" />
+                            <path stroke-linejoin="round" d="M4 8h16v11a1 1 0 01-1 1H5a1 1 0 01-1-1V8z" />
+                        </g>
+                    </svg>
+                    <span class="text-sm text-gray-500 ">訂單</span>
+                </button>
+                <button type="button" class="inline-flex flex-col items-center justify-center px-5 "
+                    onclick="window.location.href = 'setting.html';">
+                    <svg class="w-5 h-5 mb-2 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 22 22">
+                        <path xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            d="M18 19v-1.25c0-2.071-1.919-3.75-4.286-3.75h-3.428C7.919 14 6 15.679 6 17.75V19m9-11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span class="text-sm text-gray-500 ">個人</span>
+                </button>
+            </div>
+        </section>
     </div>
-</section>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 
 </body>
+
 </html>

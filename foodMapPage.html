@@ -1,0 +1,65 @@
+<!-- 餐廳內頁介紹 -->
+<!-- 照抄Uber eat -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>活動 - 專屬推薦</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        const $collapseEl = document.querySelector('#navbar-collapse-basic')
+        const $scrollSpyEl = document.querySelector('[data-hs-scrollspy="#scrollspy-1"]')
+
+        $scrollSpyEl.addEventListener('scroll.hs.scrollspy', () => {
+            if (window.outerWidth <= 639 && $collapseEl.classList.contains('open')) {
+                HSCollapse.hide($collapseEl)
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 上方模板 -->
+
+        <!-- top 上一頁 -->
+        <section class="flex bg-white z-50 fixed top-0 w-full">
+            <button class="px-4 py-3 mx-1" onclick="window.history.go(-1); ">
+                <!-- <svg class="w-6 h-6 my-1" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+            <path xmlns="http://www.w3.org/2000/svg" class="stroke-gray-500" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2m-4-8s1-1 .5-2l-1-2C12 4 13 3 13 3M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2"/>
+        </svg> -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-7 my-1" viewBox="0 0 448 512">
+                    <path
+                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                </svg>
+            </button>
+            <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
+
+            </div>
+        </section>
+
+        <!-- 上方空白區域 -->
+        <section class="w-full h-16">
+
+        </section>
+        <section class="w-full">
+            <div class="w-full h-full">
+
+                <img src="source/img/mapDemo.jpg" alt="">
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>
