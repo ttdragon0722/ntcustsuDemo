@@ -17,7 +17,7 @@
     <div class="app">
         <!-- 上方模板 -->
         <!-- top 上一頁 -->
-        <section class="flex bg-white z-50 fixed top-0 w-full">
+        <section class="flex bg-white z-20 fixed top-0 w-full">
             <button class="px-4 py-3 mx-1" onclick="window.history.go(-1); ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-7 my-1" viewBox="0 0 448 512">
                     <path
@@ -97,23 +97,64 @@
 
         
         <!-- 確認預定 按鈕 -->
-        <section class="flex bg-white z-50 fixed bottom-0 w-full py-3 flex justify-between">
+        <section class="flex bg-white z-20 fixed bottom-0 w-full py-3 flex justify-between">
             <div class="pl-4">
                 <span>
-                    aslkdjfl
+                    這邊按下去會談出密碼驗證
+                    <br>
+                    請工作人員輸入
                 </span>
             </div>
             <div class="pr-4">
-                <button class="bg-[--btm-icon-hover] text-white font-bold py-2 px-4 rounded-full"
-                    onclick="location.replace('orderActivity.html?activityName=true')">
-                    確認預定
+                <button data-modal-target="staticModal" data-modal-toggle="staticModal" class="bg-[--btm-icon-hover] text-white font-bold py-2 px-4 rounded-full"
+                    onclick="">
+                    工作人員確認付款
                 </button>
             </div>
             <div class="absolute border border-solid border-b-2 border-t-0 w-full top-0 z-[-10]">
 
             </div>
         </section>
+        
     </div>
+
+    <!-- Main modal -->
+<div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    ！工作人員畫面！
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-6 space-y-6">
+                <div>
+                    <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">請輸入工作人員密碼</label>
+                    <input type="text" id="small-input" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center px-6 py-2 space-x-2 border-t border-gray-200 rounded-b justify-end">
+                <button data-modal-hide="staticModal" type="button" class="text-gray-500 bg-white rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 ">取消</button>
+                <button data-modal-hide="staticModal" type="button" class="text-white bg-blue-700  font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                    onclick="location.href = 'orderActivity.html'"
+                >
+                    送出
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 </body>
 
 </html>

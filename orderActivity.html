@@ -13,11 +13,24 @@
         integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-        <script>
+        <script defer>
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const activityName = urlParams.get('activityName')
             console.log(activityName);
+            document.addEventListener("DOMContentLoaded", function(){
+                
+                const noneHint = document.getElementById("noneHint");
+                const showHint = document.getElementById("showHint");
+                
+                if(activityName=="true"){
+                    showHint.classList.remove('hidden')
+                    noneHint.className += 'hidden'
+    
+                }
+                
+            });
+
         </script>
 </head>
 
@@ -45,17 +58,25 @@
                 onclick="window.location.href = 'orderActivity.html'">
                 <span
                 class="text-[--btm-icon-hover] pb-1 border border-solid border-0 border-b-2 border-[--btm-icon-hover]">
-                
-        
                     票卷
                 </span>
             </button>
         </section>
 
-        <!-- 邀請朋友按鈕 -->
-        <section class="count-down w-full px-4 py-2 ">
+        <!-- 無活動提示 -->
+        <section id="noneHint" class="count-down w-full py-4
+        flex justify-center ">
+            <span class="text-sm">
+                暫無訂購活動
+            </span>
+        </section>
+
+        <!-- 活動票卷按鈕 -->
+        <section id="showHint" class="count-down w-full px-4 py-2 hidden">
             
-            <div class="w-full bg-white pt-2 pb-2 inline-flex relative">
+            <div class="w-full bg-white pt-2 pb-2 inline-flex relative"
+                onclick="location.href = 'activityCheck.html'"
+            >
                 <div class="w-20 h-20 rounded-lg overflow-hidden">
                     <img src="source/img/jamesPhoto.jpg" class="w-full h-full" alt="">
                 </div>
