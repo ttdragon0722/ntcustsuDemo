@@ -1,0 +1,119 @@
+<!-- 訂單 - 餐廳 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂單 - 餐廳</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <div class="app">
+        <!-- 上方模板 -->
+        <!-- top 上一頁 -->
+        <section class="flex bg-white z-50 fixed top-0 w-full">
+            <button class="px-4 py-3 mx-1" onclick="window.history.go(-1); ">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-7 my-1" viewBox="0 0 448 512">
+                    <path
+                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                </svg>
+            </button>
+            <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
+
+            </div>
+        </section>
+        <div class="h-14 ">
+
+        </div>
+
+        
+        <!-- 活動圖片區域 -->
+        <section class="w-full max-h-72 overflow-hidden sticky top-0 z-[-10]">
+            <img src="source/img/S__12501065.jpg" class="w-full" alt="">
+        </section>
+        
+        <!-- 活動介紹頁面  -->
+        <div class="bg-white z-30 rounded-3xl">
+
+            <!-- 無餐廳提示 -->
+            <section class="count-down w-full py-4
+            flex justify-center ">
+                <span class="text-sm">
+                    【2022｜校園演唱會】
+
+睽違已久的校園演唱會再度來臨⋯
+被疫情影響的這些年 
+各位想在演唱會盡情和偶像歡唱的心
+就像學校各處側門一樣被塵封很久了吧！！！
+煙霧彌漫 明月高照🌙
+讓我們一起沈浸
+🌗屬於我們的夜晚—吾夜🌒
+------
+［活動資訊］
+📅日期：2022/11/23
+⌚️時間：17:00入場 18:00開場
+🗺️地點：國立臺中科技大學三民校區 體育館
+-
+🚩入場券價格
+⚠️學生會會員 免費兑入場券
+非會員：早鳥報名酌收清潔費300元/人入場
+非會員：當日報名酌收清潔費300元/人+行政費100元/人入場
+-
+*主辦單位（本會）保有最終修改、變更、活動解釋及取消本
+活動之權利，若有相關異動將會公告於本會IG
+------
+#ntcustsu #吾夜
+#校園演唱會#演唱會陣容
+#活動資訊 #等你們來喔
+                </span>
+            </section>
+    
+            <!-- 查看過往餐廳按鈕 -->
+            <section class="count-down w-full py-4
+            flex justify-center ">
+                <button
+                    class="bg-white text-sm text-[--btm-icon-hover] font-semibold 
+                    py-2 px-4 border border-[--btm-icon-hover] rounded-lg shadow w-64">
+                    查看過往餐廳訂單
+                </button>
+            </section>
+            <div class="h-96">
+
+            </div>
+            <div class="h-96">
+
+            </div>
+
+            <div class="h-36">
+
+            </div>
+        </div>
+
+        
+        <!-- 確認預定 按鈕 -->
+        <section class="flex bg-white z-50 fixed bottom-0 w-full py-3 flex justify-between">
+            <div class="pl-4">
+                <span>
+                    aslkdjfl
+                </span>
+            </div>
+            <div class="pr-4">
+                <button class="bg-[--btm-icon-hover] text-white font-bold py-2 px-4 rounded-full"
+                    onclick="location.replace('orderActivity.html')">
+                    確認預定
+                </button>
+            </div>
+            <div class="absolute border border-solid border-b-2 border-t-0 w-full top-0 z-[-10]">
+
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

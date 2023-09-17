@@ -1,0 +1,92 @@
+<!-- 訂單 - 餐廳 -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訂單 - 餐廳</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="config.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <div class="app">
+        <!-- 上方模板 -->
+        <!-- top 上一頁 -->
+        <section class="flex bg-white z-50 fixed top-0 w-full">
+            <button class="px-4 py-3 mx-1" onclick="window.history.go(-1); ">
+                <!-- <svg class="w-6 h-6 my-1" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 22">
+            <path xmlns="http://www.w3.org/2000/svg" class="stroke-gray-500" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12H4v4a4 4 0 004 4h5a4 4 0 004-4v-4zm0 0h2a2 2 0 012 2v1a2 2 0 01-2 2h-2m-4-8s1-1 .5-2l-1-2C12 4 13 3 13 3M8.64 9s1-1 .5-2l-1-2c-.5-1 .5-2 .5-2"/>
+        </svg> -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-7 my-1" viewBox="0 0 448 512">
+                    <path
+                        d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                </svg>
+            </button>
+            <div class="absolute border border-solid border-b-2 border-t-0 w-full bottom-0 z-[-10]">
+
+            </div>
+        </section>
+
+        <section class="w-full bg-white border-t border-gray-200 bg-white fixed top-12">
+            <!-- 大標題group -->
+            <div class="pb-2">
+                <h1 class="ml-8 mt-8 text-2xl font-bold">
+                    收藏夾
+                </h1>
+            </div>
+
+        </section>
+        <section class="flex w-full py-4 bg-white z-50 ml-2 mt-2 fixed top-28">
+            <button class="w-1/5 flex justify-center text-xs font-bold"
+                onclick="location.replace('collectFood.html')">
+                <span>
+                    餐廳
+                </span>
+            </button>
+            <button class="w-1/5 flex justify-center text-xs font-bold"
+                onclick="location.replace('collectActivity.html')">
+                    
+                    <span class="text-[--btm-icon-hover] pb-1 border border-solid border-0 border-b-2 border-[--btm-icon-hover]">
+                    活動
+                </span>
+            </button>
+
+            
+        </section>
+        
+        <!-- 子功能選取列 x2 link -->
+        <div class="h-48">
+
+        </div>
+
+        <!-- 無餐廳提示 -->
+        <section class="count-down w-full py-4
+        flex justify-center ">
+            <span class="text-sm">
+                暫無收藏餐廳
+            </span>
+        </section>
+
+        <!-- 查看過往餐廳按鈕 -->
+        <section class="count-down w-full py-4
+        flex justify-center ">
+            <button
+                class="bg-white text-sm text-[--btm-icon-hover] font-semibold 
+                py-2 px-4 border border-[--btm-icon-hover] rounded-lg shadow w-64">
+                查看過往餐廳訂單
+            </button>
+        </section>
+
+        
+
+        
+    </div>
+</body>
+
+</html>
