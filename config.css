@@ -7,6 +7,8 @@
     --calc-60:calc(60%);
     --calc-70:calc(70%);
 
+    --main-color:#F27813;
+    
     /* 下menu顏色 */
     --btm-icon-hover: #F27813;
     --btm-btn-hover: aliceblue;
@@ -57,7 +59,7 @@
     margin: 0 auto;
     max-width: 425px;
 }
-
+    
 /* 隱藏scroll bar */
 .scroll-bar-hide::-webkit-scrollbar {
     display: none;
