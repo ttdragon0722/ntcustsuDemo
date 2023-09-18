@@ -941,6 +941,35 @@
             </div>
         </div>
 
+        <!-- 廣告向上彈出大視窗3 -->
+        <div id="staticModal3" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-100">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-center p-4 rounded-t dark:border-gray-600">
+                        <h3 class="text-xl font-semibold  dark:text-[--button-bg1] text-center">
+                            今天就去這家！
+                        </h3>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="px-6 pb-6 space-y-6">
+                        <div>
+                            <img src="source/img/adsIconDemo.png" class="w-full" alt="">
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center px-6 pb-4 space-x-2 rounded-b justify-end">
+                        <button data-modal-hide="staticModal3" type="button"
+                            class="text-[--button-bg1] font-black w-full rounded-lg text-lg px-5 py-2.5 text-center">
+                            再推薦一次
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- 下方四格選擇大功能 bottom navbar menu -->
         <section class="fixed bottom-0 left-0 z-40 w-full h-16 bg-white border-t border-gray-200 ">
@@ -1006,6 +1035,31 @@
                 </button>
             </div>
         </section>
+
+        <!-- ads icon fixed -->
+        <div class="fixed bottom-36 h-24 w-24 right-0" id="adsIcon">
+
+            <div class="w-full h-full relative">
+                <div class="w-full h-full" data-modal-target="staticModal3"
+                data-modal-toggle="staticModal3">
+                    <img src="source/img/icon.png" class="w-full h-full" alt="">
+                </div>
+                <button class="absolute right-2 p-1 top-1 z-[50] text-amber-900 border-2 border-amber-900 rounded-full"
+                    onclick="document.getElementById('adsIcon').style.display='none'"
+                >
+                    <svg class="w-2.5 h-2.5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- <div class="relative w-full h-full bg-gray-100">
+
+            </div> -->
+            
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
